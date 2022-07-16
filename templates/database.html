@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container">
+  <h3>Database of previous distributions</h3>
+  <form class="" action="/datasets" method="post">
+    <select Name="dataset" Size="{{size}}" id="datasets">
+      {% for index, dataset in datasets %}
+      <option value={{index}}>{{dataset}}</option>
+      {% endfor %}
+    </select>
+    <br>
+    <button type="submit" name="commit" id="commit">Show plot</button>
+  </form>
+</div>
+
+{% if result %}
+<div class="container" id="result">
+  <h2>Dataset <span class='bold'>{{name}}</span> {{verdict}} to Benford's law.</h2>
+  <h3>Morrow's <em>d</em><sub>N</sub> statistic = {{result}}; criterion for non-conformity at <em>p</em> = 0.05:
+    <em>d</em><sub>N</sub>
+    > 1.330 (<a href="http://eprints.lse.ac.uk/60364/1/dp1291.pdf" target="_blank">source</a>)
+  </h3>
+  <div class="plot">
+    {{figure}}
+  </div>
+</div>
+
+<script type="text/javascript">
+  document.getElementById("result").scrollIntoView()
+</script>
+
+{% endif %}
+
+<script type="text/javascript">
+  if (document.getElementById("datasets").size === 0) {
+    document.getElementById("commit").disabled = true;
+  } else {
+    document.getElementById("commit").disabled = false;
+  }
+</script>
+
+{% endblock %}

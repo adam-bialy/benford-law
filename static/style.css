@@ -1,0 +1,62 @@
+body, nav {
+  background-color: #FFE69A;
+  text-align: center;
+  font-family: "Roboto";
+}
+
+h2, h3 {
+  font-weight: 400;
+  margin: 1rem 0;
+}
+
+table {
+  margin: auto;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+input, button, select {
+  font-size: 1rem;
+}
+
+select {
+  width: 10rem;
+}
+
+#datasets {
+  width: 15rem;
+  height: 15rem;
+  margin-bottom: 1.5rem;
+}
+
+th, td {
+  padding: 0.5rem;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+
+.container {
+  margin: 2.5rem 10%;
+}
+
+a {
+  font-family: "Roboto";
+  color: #035397;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+
+/* Palette:
+https://colorhunt.co/palette/92b4ecffffffffe69affd24c */
